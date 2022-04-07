@@ -1,0 +1,25 @@
+:root {
+    --primary-color: rgb(68, 68, 224);
+}
+
+p {
+    background-color: var(--primary-color);
+}
+
+* Media queries */
+@media only screen and (max-width: 992px) {
+    #search-city{
+        width:100%;
+    }
+    #search-button{
+        width:100%;
+    }
+}
+@media only screen and (max-width: 575px) {
+
+    #fiveDayForecastUl{
+        justify-content: center;
+    }
+}
+
+
