@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <!-- Styles CSS-->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>On The Go Nutrition</title>
 </head>
 <body>
-    
+    <!-- Jumbotron to display the Restaurant Name upon search -->
+    <div id="header" class="jumbotron container-fluid text-center">
+        <h1 id="header-text" class="display-2">On the Go Nutrtion</h1>
+        <div id="restaurants"></div>
+    </div> 
+
+    <!-- Main Container for webpage content -->
+    <div id="content" class="container">
+        <div class="row">
+
+            <!-- Left side content with city search box and append cities -->
+            <div id="content-left" class="col-md-3">
+                <form>
+                    <label for="search-city">Search for a City</label>
+                    <div class="form-row">
+                        <input id="search-city" class="form-control" name="city" value="Dallas"></input>
+                        <!-- fontawesome magnifying glass -->
+                        <button id="search-button" class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+                <div id="search-error"></div>
+                <!-- previous searched cities -->
+                <ul id="city-results" class="list-group-mt-4"></ul>
+                <!-- clears storage -->
+                <a id="clear-storage" href="#"></a>
+            </div>
+        
+            <!-- Middle Section with restaurant name and top healthy dishes -->
+            <div class="d-flex justify-content-center">
+                <!-- Current Restaurant displayed at top -->
+                <div id="current-restaurant" class="border rounded"></div>
+                <!-- 4 Main Dishes Displayed -->
+                <div id="dishes" class="mt-5"></div>
+            </div>
+
+            <!-- Nutrition container side -->
+            <div id="content-right" class="col-md-6">
+                <p> Nutrition</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap -->
+  
+    <!-- Assets index.js -->
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
