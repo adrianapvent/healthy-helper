@@ -21,10 +21,10 @@
 <body>
     <section class="hero is-success">
         <div class="hero-body has-text-centered">
-          <p class="title">
+          <p class="title is-size-1">
             On the Go Nutrition
           </p>
-          <p class="subtitle">
+          <p class="subtitle is-size-4">
             Find Meal Ideas For Your Ingredients
           </p>
         </div>
@@ -34,23 +34,20 @@
         <h1 id="header-text" class="display-2">On the Go Nutrition</h1>
         <h2>Find Meal Ideas For Your Ingredients</h2>
     </div> -->
-  
-    <div class = "content">
-        <div class="row justify-content-center">
 
+    <div class="columns">
+        <div class="meal-search column is-one-quarter">
             <!-- Ingredient Searchbar -->
-            <div class="meal-search col-md-3">
                 <h3 class="ml-3">Search by Ingredient:</h3>
                 <div class="form-inline float-left ml-3">
                     <input class="form-control" placeholder="Enter an ingredient" id="search-input">
                     <!-- fontawesome magnifying glass -->
                     <button type="search-button" class="btn btn-primary" id="ingr-search"><i class="fas fa-search"></i></button>
                 </div>
-            </div>
-    
+        </div>
+        
+        <div class="column is-half">
             <!-- Search Results -->
-            <div class="col-md-6">
-
                 <div>
                     <h3>Your Search Results:</h3>
                     <div id="meal-results">
@@ -65,12 +62,11 @@
                     <div class="meal-details-content">
                         <!-- Populated by JS Function getMealRecipe -->
                     </div>
-                </div>
-
-            </div>
-
+                </div>            
+        </div>
+        
+        <div class="column is-one-quarter">
             <!-- Nutrition Searchbar -->
-            <div id="content-right" class="col-md-3">
                 <div class="float-right mr-3">
                     <h3 class="">Search Nutrition Info:</h3>
                     <form class="form-inline">
@@ -81,8 +77,6 @@
                         </div>
                     </form>
                 </div>
-            </div>
-
         </div>
     </div>
 
