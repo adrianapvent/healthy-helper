@@ -1,25 +1,51 @@
-:root {
-    --primary-color: rgb(68, 68, 224);
+
+
+.recipe-button {
+    text-align: center;
+    font-size: xx-large;
 }
 
-p {
-    background-color: var(--primary-color);
+/* Modal CSS */
+.meal-recipe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgb(105, 93, 93);
+    border-radius: 15px;
+    width: 80%;
+    height: 90%;
+    overflow-y: scroll;
+    display: none;
 }
 
-* Media queries */
-@media only screen and (max-width: 992px) {
-    #search-city{
-        width:100%;
-    }
-    #search-button{
-        width:100%;
-    }
-}
-@media only screen and (max-width: 575px) {
-
-    #fiveDayForecastUl{
-        justify-content: center;
-    }
+/* JavaScript CSS */
+.recipe-title{
+    letter-spacing: 1px;
+    padding-bottom: 10px;
 }
 
+.showRecipe{
+    display: block;
+}
 
+.meal-details-content{
+    margin: 35px;
+}
+
+#close-recipe {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: large;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}

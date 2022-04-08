@@ -5,70 +5,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
     <!-- Styles CSS-->
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>On The Go Nutrition</title>
+
+    <title>Find Meals For Your Ingredients</title>
 </head>
 
 <body>
-    <!-- Jumbotron to display the Restaurant Name upon search -->
-    <div id="header" class="jumbotron container-fluid text-center">
-        <h1 id="header-text" class="display-2">On the Go Nutrtion</h1>
-        <div id="restaurants"></div>
-    </div> 
 
-    <!-- Main Container for webpage content -->
-    <div id="content">
+    <!--Jumbotron-->
+    <div id="header" class="jumbotron container-fluid text-center">
+        <h1 id="header-text" class="display-2">On the Go Nutrition</h1>
+        <h2>Find Meal Ideas For Your Ingredients</h2>
+    </div>
+  
+    <div class = "content">
         <div class="row justify-content-center">
 
-            <!-- Left side content with city search box and append cities -->
-            <div id="content-left" class="col-md-2 ml-2">
-                
-                <form class="form-inline">
-                    <div class="form-group mb-2">
-                        <input id="search-city" class="form-control" name="city" value="Search for a City"></input>
-                        <!-- fontawesome magnifying glass -->
-                        <button id="search-button" class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-                <div id="search-error"></div>
-                <!-- previous searched cities -->
-                <ul id="city-results" class="list-group-mt-4"></ul>
-                <!-- clears storage -->
-                <a id="clear-storage" href="#"></a>
+            <!-- Ingredient Searchbar -->
+            <div class="meal-search col-md-3">
+                <h3 class="ml-3">Search by Ingredient:</h3>
+                <div class="form-inline float-left ml-3">
+                    <input class="form-control" placeholder="Enter an ingredient" id="search-input">
+                    <!-- fontawesome magnifying glass -->
+                    <button type="search-button" class="btn btn-primary" id="ingr-search"><i class="fas fa-search"></i></button>
+                </div>
             </div>
-        
-            <!-- Middle Section with restaurant name and top healthy dishes -->
-            <div id="d-flex justify-content-center" class="col-md-7">
-                <!-- Current Restaurant displayed at top -->
-                <div id="current-restaurant" class="border rounded"></div>
-                <!-- 4 Main Dishes Displayed -->
-                <div id="dishes" class="mt-5"></div>
+    
+            <!-- Search Results -->
+            <div class="col-md-6">
+
+                <div>
+                    <h3>Your Search Results:</h3>
+                    <div id="meal-results">
+                        <!-- Populate by JS Function getMealList -->
+                    </div>
+                </div>
+
+                <div class="meal-recipe">
+                    <!-- recipe close btn -->
+                    <button type="button" id="close-recipe"><i class="fas fa-times"></i></button>
+                    <!-- meal content -->
+                    <div class="meal-details-content">
+                        <!-- Populated by JS Function getMealRecipe -->
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Nutrition container side -->
-            <div id="content-right" class="col-md-2">
-                <form class="form-inline float-right mr-3">
-                    <div class="form-group mb-2">
-                        <input id="search-nutrition" class="form-control" name="food" value="Search by Dish"></input>
-                        <!-- fontawesome magnifying glass -->
-                        <button id="search-button" class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-                
-                
+            <!-- Nutrition Searchbar -->
+            <div id="content-right" class="col-md-3">
+                <div class="float-right mr-3">
+                    <h3 class="">Search Nutrition Info:</h3>
+                    <form class="form-inline">
+                        <div class="form-group mb-2">
+                            <input id="search-nutrition" class="form-control" name="food" placeholder="Search by Dish"></input>
+                            <!-- fontawesome magnifying glass -->
+                            <button id="search-button" class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
             </div>
+
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- Assets index.js -->
-    <script src="./assets/js/index.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- Assets index.js -->
+  <script src="./assets/js/index.js"></script>
 </body>
 
 </html>
