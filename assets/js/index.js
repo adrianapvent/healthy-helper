@@ -26,10 +26,12 @@ function getMealList(){
                         <div>
                             <img src="${meal.strMealThumb}" class="img-fluid" alt="picture of food">
                         </div>
-                        <div class="form-inline justify-content-center">
+                        <div class="form-inline justify-content-left">
                             <a href="#" class="recipe-button">${meal.strMeal}</a>
                         </div>
-                    </div>`;
+                    </div>
+					<br>
+					<br>`;
             });
             mealResults.classList.remove('noMeal');
         } else {
@@ -100,4 +102,15 @@ function mealRecipeModal(meal){
 
     mealDetails.innerHTML = html;
     mealDetails.parentElement.classList.add('showRecipe');
+}
+
+var displayIngr = function(ingredients) {
+	for (var i = 0; i < ingredients.length; i++) {
+		var ingrEl = document.createElement("li");
+
+		var titleEl = document.createElement("span");
+		titleEl.textContent = ${meal.strIngredient[i] + " - " + meal.strMeasure[i]}
+
+		
+	}
 }

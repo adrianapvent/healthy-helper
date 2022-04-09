@@ -49,3 +49,10 @@
     justify-content: center;
     opacity: 0.9;
 }
+
+@media(max-width: 767px) { 
+    .reverse-columns {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+  }
