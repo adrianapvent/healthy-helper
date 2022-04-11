@@ -3,6 +3,8 @@ const ingSearch = document.getElementById('ingr-search');
 const mealResults = document.getElementById('meal-results');
 const mealDetails = document.querySelector('.meal-details-content');
 const clRecBtn = document.getElementById('close-recipe');
+const nutritionSearchButton = document.getElementById('search-nutrition-button');
+
 
 // EVENT LISTENERS
 ingSearch.addEventListener('click', getMealList);
@@ -10,6 +12,7 @@ mealResults.addEventListener('click', getMealRecipe);
 clRecBtn.addEventListener('click', () => {
     mealDetails.parentElement.classList.remove('showRecipe');
 });
+nutritionSearchButton.addEventListener('click', getNutritionList);
 
 
 // fetch recipes that contain user defined ingredient
@@ -100,4 +103,42 @@ function mealRecipeModal(meal){
 
     mealDetails.innerHTML = html;
     mealDetails.parentElement.classList.add('showRecipe');
+}
+
+
+// fetch nutrition of searched ingredient
+
+function getNutritionList(e){
+	e.preventDefault();
+    let searchInputText = document.getElementById('search-nutrition').value.trim();
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Host': 'nutritionix-api.p.rapidapi.com',
+			'X-RapidAPI-Key': 'b24b06557dmsh567e2d4a6127fd1p14b38cjsn068eec7f565c'
+		}
+	};
+	
+	fetch(`https://nutritionix-api.p.rapidapi.com/v1_1/search/${searchInputText}?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat`, options)
+		.then(response => response.json())
+		// .then(data => console.log(data))
+   		.then(data => {
+		console.log(data);
+        let html = "";
+        if(data.hits){
+            data.hits.forEach(item => {
+                html += `
+                    <div data-id="${item.fields.item_id}">
+                        <div class="form-inline justify-content-center">
+                            <span class="ingredient-button">${item.fields.item_name}: calories: ${item.fields.nf_calories}</span>
+                        </div>
+                    </div>`;
+            });
+            mealResults.classList.remove('noMeal');
+        } else {
+            html="No ingredient found :( <br> Please try again.";
+            mealResults.classList.add('noMeal');
+        }
+        mealResults.innerHTML = html;
+    });
 }
