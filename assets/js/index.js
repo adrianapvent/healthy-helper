@@ -104,13 +104,3 @@ function mealRecipeModal(meal){
     mealDetails.parentElement.classList.add('showRecipe');
 }
 
-var displayIngr = function(ingredients) {
-	for (var i = 0; i < ingredients.length; i++) {
-		var ingrEl = document.createElement("li");
-
-		var titleEl = document.createElement("span");
-		titleEl.textContent = ${meal.strIngredient[i] + " - " + meal.strMeasure[i]}
-
-		
-	}
-}
