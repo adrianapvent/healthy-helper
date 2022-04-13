@@ -3,6 +3,7 @@ const ingSearch = document.getElementById('ingr-search');
 const mealResults = document.getElementById('meal-results');
 const mealDetails = document.querySelector('.meal-details-content');
 const clRecBtn = document.getElementById('close-recipe');
+const nutritionSearchButton = document.getElementById('search-nutrition-button');
 
 // EVENT LISTENERS
 ingSearch.addEventListener('click', getMealList);
@@ -10,7 +11,7 @@ mealResults.addEventListener('click', getMealRecipe);
 clRecBtn.addEventListener('click', () => {
     mealDetails.parentElement.classList.remove('showRecipe');
 });
-
+nutritionSearchButton.addEventListener('click', getNutritionList);
 
 // fetch recipes that contain user defined ingredient
 function getMealList(){

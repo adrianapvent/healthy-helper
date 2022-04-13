@@ -50,3 +50,10 @@
     opacity: 0.9;
 }
 
+ /* Nutritionix */
+ .ingredient-button {
+    text-align: center;
+    font-size: xx-large;
+    margin: 10px;
+    padding: 10px;
+  }
