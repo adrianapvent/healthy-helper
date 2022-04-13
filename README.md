@@ -15,19 +15,19 @@ THEN I will find recipes that contain the ingredient and be able to search for t
 ### **Acceptance Criteria**
 
 GIVEN I enter an ingredient
-- [] WHEN I open the recipe information
+- [ ] WHEN I open the recipe information
 THEN I am presented with a list of recipes that contain the ingredient searches for
 
-- [] WHEN I click on a recipe
+- [ ] WHEN I click on a recipe
 THEN I am presented with a MODAL that includes total required ingredients and cooking instructions
 
-- [] WHEN I click on the food
+- [ ] WHEN I click on the food
 THEN I can see the nutritional information
 
-- [] WHEN I click the search button
+- [ ] WHEN I click the search button
 THEN the text for that ingredient is saved in local storage
 
-- [] WHEN I refresh the page
+- [ ] WHEN I refresh the page
 THEN the saved events persist
 
 ### **Additional Criteria**
