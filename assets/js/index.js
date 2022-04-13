@@ -24,7 +24,7 @@ $("#ingr-search").on("click", function() {
 var history = JSON.parse(localStorage.getItem("history")) || [];
 
 function newRow(text) {
-var list = $("<li>").addClass("list-group-item").text(text);
+var list = $("<li>").addClass("list-group-item ml-3").text(text);
     $(".history").append(list);
 }
 
@@ -61,9 +61,9 @@ function getMealList(searchInputTxt){
         if(data.meals){
             data.meals.forEach(meal => {
                 html += `
-                    <div data-id="${meal.idMeal}">
+                    <div data-id="${meal.idMeal}" class="justify-content-center">
                         <div>
-                            <img src="${meal.strMealThumb}" class="img-fluid" alt="picture of food">
+                            <img src="${meal.strMealThumb}" class="rounded mx-auto d-block" alt="picture of food">
                         </div>
                         <div class="form-inline justify-content-center">
                             <a href="#" class="recipe-button">${meal.strMeal}</a>
@@ -173,7 +173,7 @@ function getNutritionList(e){
                     <div class="col-auto"
                     <div data-id="${item.fields.item_id}">
                         <div class="justify-content-center">
-                            <span class="ingredient-button">${item.fields.item_name}: <b>Calories: ${item.fields.nf_calories}</b> </span>
+                            <span class="ingredient-button">${item.fields.item_name} <br> <b>Calories: ${item.fields.nf_calories}</b> </span>
                         </div>
                     </div>
                 `;
