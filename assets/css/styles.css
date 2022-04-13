@@ -77,8 +77,13 @@ body {
 
   /* Nutritionix */
   .ingredient-button {
+    display: block;
     text-align: center;
-    font-size: xx-large;
-    margin: 10px;
+    font-size: medium;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
+    white-space: nowrap;
+    border: 3px solid #B1C868;
+
   }
