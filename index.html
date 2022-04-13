@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+ 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <!-- Bulma stylings-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <!-- Styles CSS-->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <title>Healthy Helper</title>
 </head>
+
 <body>
+
+    <!-- Jumbotron -->
+    <section class="hero is-success">
+        <div class="hero-body has-text-centered">
+          <p class="title is-size-1">
+            Healthy Helper
+          </p>
+          <p class="subtitle is-size-4">
+            Find Meal Ideas For Your Ingredients
+          </p>
+        </div>
+    </section>
+
+  
+    <div class = "columns is-8 is-variable pt-5">
+        
+        <div class="meal-search column is-one-quarter">
+            <!-- Ingredient Searchbar -->
+            <h3 class="ml-3 mb-2 is-size-3 has-text-weight-medium">Search by Ingredient:</h3>
+            <div class="form-inline ml-3">
+                <input class="form-control" placeholder="Enter an ingredient" id="search-input">
+                <!-- fontawesome magnifying glass -->
+                <button type="search-button" class="btn btn-primary" id="ingr-search"><i class="fas fa-search"></i></button>
+            </div>
+            <br>
+            <h3 class="ml-3">Previous Ingredients:</h3>
+            <ul class="list-group history"></ul>
+        </div>
     
+        <!-- Search Results -->
+        <div class="column is-half">
+
+            <div>
+                <h3 class="is-size-3 has-text-weight-medium">Your Search Results:</h3>
+                <br>
+                <div id="meal-results">
+                    <!-- Populate by JS Function getMealList -->
+                </div>
+            </div>
+
+            <div class="meal-recipe">
+                <!-- recipe close btn -->
+                <button type="button" id="close-recipe"><i class="fas fa-times"></i></button>
+                <!-- meal content -->
+                <div class="meal-details-content">
+                    <!-- Populated by JS Function getMealRecipe -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Nutrition Searchbar -->
+        <div class="column is-one-quarter">
+            <div class="mr-3">
+                <h3 class="mb-2 is-size-3 has-text-weight-medium">Search Nutrition Info:</h3>
+                <!-- <form class="form-inline"> -->
+                    <div class="form-inline mb-2 mr-3">
+                        <input id="search-nutrition" class="form-control" name="food" placeholder="Search by Dish"></input>
+                        <!-- fontawesome magnifying glass -->
+                        <button id="search-nutrition-button" class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                <!-- </form> -->
+                <div id="nutrition-info">
+                    <!-- Populatex by JS Function getNutritionList -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- Assets index.js -->
+  <script src="./assets/js/index.js"></script>
 </body>
+
 </html>

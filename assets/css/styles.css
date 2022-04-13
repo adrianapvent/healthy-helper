@@ -1,7 +1,109 @@
-:root {
-    --primary-color: #e24747;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-p {
-    background-color: var(--primary-color);
+:root {
+    --primary-color: var(rgb(186, 176, 176));
+    --secondary-color: var(rgb(37, 34, 34));
+    --tertiary-color: var(rgb(255, 255, 255));
+
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--secondary-color);
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#search-input {
+    width:90%
+}
+
+#search-nutrition {
+    width:89%
+}
+
+.meal-results {
+    margin-left: 3px;
+}
+
+.recipe-button {
+    text-align: center;
+    font-size: xx-large;
+}
+
+/* Modal CSS */
+.meal-recipe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgb(105, 93, 93);
+    border-radius: 15px;
+    width: 60%;
+    height: 90%;
+    overflow-y: scroll;
+    display: none;
+    z-index: 10;
+}
+
+.meal-recipe h2 {
+    font-size: xx-large;
+}
+
+/* JavaScript CSS */
+.recipe-title{
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+}
+
+.showRecipe{
+    display: block;
+}
+
+.meal-details-content{
+    margin: 35px;
+}
+
+#close-recipe {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: large;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+/* Nutritionix */
+.ingredient-button {
+    display: block;
+    text-align: center;
+    font-size: medium;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    white-space: wrap;
+    border: 3px solid #B1C868;
+}
+
+.ingredient-button {
+    text-align: center;
+    font-size: xx-large;
+    margin: 10px;
+    padding: 10px;
+  }
