@@ -1,4 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
+:root {
+    --primary-color: var(rgb(186, 176, 176));
+    --secondary-color: var(rgb(37, 34, 34));
+    --tertiary-color: var(rgb(255, 255, 255));
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--secondary-color);
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
 
 .recipe-button {
     text-align: center;
@@ -14,7 +36,7 @@
     color: #fff;
     background: rgb(105, 93, 93);
     border-radius: 15px;
-    width: 80%;
+    width: 60%;
     height: 90%;
     overflow-y: scroll;
     display: none;
@@ -49,4 +71,16 @@
     align-items: center;
     justify-content: center;
     opacity: 0.9;
+}
+
+/* Nutritionix */
+.ingredient-button {
+    display: block;
+    text-align: center;
+    font-size: medium;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    white-space: wrap;
+    border: 3px solid #B1C868;
 }

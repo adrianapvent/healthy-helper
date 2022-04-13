@@ -13,14 +13,14 @@
     <!-- Styles CSS-->
     <link rel="stylesheet" href="./assets/css/styles.css">
 
-    <title>Find Meals For Your Ingredients</title>
+    <title>Healthy Helper</title>
 </head>
 
 <body>
 
     <!--Jumbotron-->
     <div id="header" class="jumbotron container-fluid text-center">
-        <h1 id="header-text" class="display-2">On the Go Nutrition</h1>
+        <h1 id="header-text" class="display-2">Healthy Helper</h1>
         <h2>Find Meal Ideas For Your Ingredients</h2>
     </div>
   
@@ -65,13 +65,16 @@
             <div id="content-right" class="col-md-3">
                 <div class="float-right mr-3">
                     <h3 class="">Search Nutrition Info:</h3>
-                    <form class="form-inline">
-                        <div class="form-group mb-2">
+                    <!-- <form class="form-inline"> -->
+                        <div class="form-inline mb-2">
                             <input id="search-nutrition" class="form-control" name="food" placeholder="Search by Dish"></input>
                             <!-- fontawesome magnifying glass -->
-                            <button id="search-button" class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                            <button id="search-nutrition-button" class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                         </div>
-                    </form>
+                    <!-- </form> -->
+                    <div id="nutrition-info">
+                        <!-- Populatex by JS Function getNutritionList -->
+                    </div>
                 </div>
             </div>
 

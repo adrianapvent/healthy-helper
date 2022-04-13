@@ -5,11 +5,13 @@ const mealResults = document.getElementById('meal-results');
 const mealDetails = document.querySelector('.meal-details-content');
 const clRecBtn = document.getElementById('close-recipe');
 
+
 // EVENT LISTENERS
 mealResults.addEventListener('click', getMealRecipe);
 clRecBtn.addEventListener('click', () => {
     mealDetails.parentElement.classList.remove('showRecipe');
 });
+
 
 // INGREDIENT SEARCH BAR
 $("#ingr-search").on("click", function() {
@@ -139,3 +141,48 @@ function mealRecipeModal(meal){
     mealDetails.parentElement.classList.add("showRecipe");
 }
 })
+
+//////////////////////////////////////////////
+
+// DOM PARAMS & EVENT LISTENER FOR NUTRITIONIX
+const nutritionSearchButton = document.getElementById('search-nutrition-button');
+const nutriResults = document.getElementById('nutrition-info');
+nutritionSearchButton.addEventListener('click', getNutritionList);
+
+// fetch nutrition of searched ingredient
+function getNutritionList(e){
+    e.preventDefault();
+    let searchInputText = document.getElementById('search-nutrition').value.trim();
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Host': 'nutritionix-api.p.rapidapi.com',
+			'X-RapidAPI-Key': 'aca63d80bemsha49be9e7cbaf574p19b807jsnf26167055f5a'
+		}
+	};
+	
+	fetch(`https://nutritionix-api.p.rapidapi.com/v1_1/search/${searchInputText}?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat`, options)
+		.then(response => response.json())
+   		.then(data => {
+		console.log(data);
+        let html = "";
+        if(data.hits){
+            data.hits.forEach(item => {
+                html += `
+
+                    <div class="col-auto"
+                    <div data-id="${item.fields.item_id}">
+                        <div class="justify-content-center">
+                            <span class="ingredient-button">${item.fields.item_name}: <b>Calories: ${item.fields.nf_calories}</b> </span>
+                        </div>
+                    </div>
+                `;
+            });
+            nutriResults.classList.remove('noNutr');
+        } else {
+            html="No nutritional info found :( <br> Please try again.";
+            nutriResults.classList.add('noNutr');
+        }
+        nutriResults.innerHTML = html;
+    });
+}
