@@ -18,6 +18,7 @@
     height: 90%;
     overflow-y: scroll;
     display: none;
+    z-index: 10;
 }
 
 /* JavaScript CSS */

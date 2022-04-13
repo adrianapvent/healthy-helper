@@ -1,23 +1,60 @@
+$(document).ready(function () {
+
 // DOM PARAMS
-const ingSearch = document.getElementById('ingr-search');
 const mealResults = document.getElementById('meal-results');
 const mealDetails = document.querySelector('.meal-details-content');
 const clRecBtn = document.getElementById('close-recipe');
 
 // EVENT LISTENERS
-ingSearch.addEventListener('click', getMealList);
 mealResults.addEventListener('click', getMealRecipe);
 clRecBtn.addEventListener('click', () => {
     mealDetails.parentElement.classList.remove('showRecipe');
 });
 
+// INGREDIENT SEARCH BAR
+$("#ingr-search").on("click", function() {
+    var searchInputTxt = $("#search-input").val();
+    $("#search-input").val("");
+    getMealList(searchInputTxt);
+});
 
-// fetch recipes that contain user defined ingredient
-function getMealList(){
-    let searchInputTxt = document.getElementById('search-input').value.trim();
+// CREATE NEW ROW
+var history = JSON.parse(localStorage.getItem("history")) || [];
+
+function newRow(text) {
+var list = $("<li>").addClass("list-group-item").text(text);
+    $(".history").append(list);
+}
+
+// persist through refresh
+if (history.length > 0) {
+    getMealList(history[history.length - 1]);
+}
+ 
+// add new row list item if not already parsed
+for (var i = 0; i < history.length; i++) {
+    newRow(history[i]);
+}
+ 
+// jQuery event listener to create new Row List Item
+$(".history").on("click", "li", function() {
+    getMealList($(this).text());
+});
+
+// FUNCTION to fetch recipes that contain user defined ingredients
+function getMealList(searchInputTxt){
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
     .then(response => response.json())
     .then(data => {
+        console.log(data);
+
+        // SAVED SEARCH HISTORY
+        if (history.indexOf(searchInputTxt) === -1) {
+            history.push(searchInputTxt);
+            localStorage.setItem("history", JSON.stringify(history));
+            newRow(searchInputTxt);
+        } 
+
         let html = "";
         if(data.meals){
             data.meals.forEach(meal => {
@@ -29,22 +66,22 @@ function getMealList(){
                         <div class="form-inline justify-content-center">
                             <a href="#" class="recipe-button">${meal.strMeal}</a>
                         </div>
-                    </div>`;
+                    </div>
+                `;
             });
-            mealResults.classList.remove('noMeal');
+            mealResults.classList.remove("noMeal");
         } else {
             html="No meal found :( <br> Please try again.";
-            mealResults.classList.add('noMeal');
+            mealResults.classList.add("noMeal");
         }
         mealResults.innerHTML = html;
-    });
+    })
 }
-
 
 // fetch recipe details
 function getMealRecipe(i){
     i.preventDefault();
-    if(i.target.classList.contains('recipe-button')){
+    if(i.target.classList.contains("recipe-button")){
         let mealItem = i.target.parentElement.parentElement;
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
         .then(response => response.json())
@@ -64,26 +101,26 @@ function mealRecipeModal(meal){
         <div class="col-md-3">
             <h3>Ingredients Required:</h3>
             <ul>
-                <li>${meal.strIngredient1 + " - " + meal.strMeasure1}</li>
-                <li>${meal.strIngredient2 + " - " + meal.strMeasure2}</li>
-                <li>${meal.strIngredient3 + " - " + meal.strMeasure3}</li>
-                <li>${meal.strIngredient4 + " - " + meal.strMeasure4}</li>
-                <li>${meal.strIngredient5 + " - " + meal.strMeasure5}</li>
-                <li>${meal.strIngredient6 + " - " + meal.strMeasure6}</li>
-                <li>${meal.strIngredient7 + " - " + meal.strMeasure7}</li>
-                <li>${meal.strIngredient8 + " - " + meal.strMeasure8}</li>
-                <li>${meal.strIngredient9 + " - " + meal.strMeasure9}</li>
-                <li>${meal.strIngredient10 + " - " + meal.strMeasure10}</li>
-                <li>${meal.strIngredient11 + " - " + meal.strMeasure11}</li>
-                <li>${meal.strIngredient12 + " - " + meal.strMeasure12}</li>
-                <li>${meal.strIngredient13 + " - " + meal.strMeasure13}</li>
-                <li>${meal.strIngredient14 + " - " + meal.strMeasure14}</li>
-                <li>${meal.strIngredient15 + " - " + meal.strMeasure15}</li>
-                <li>${meal.strIngredient16 + " - " + meal.strMeasure16}</li>
-                <li>${meal.strIngredient17 + " - " + meal.strMeasure17}</li>
-                <li>${meal.strIngredient18 + " - " + meal.strMeasure18}</li>
-                <li>${meal.strIngredient19 + " - " + meal.strMeasure19}</li>
-                <li>${meal.strIngredient20 + " - " + meal.strMeasure20}</li>
+                <li>${meal.strIngredient1 + "   " + meal.strMeasure1}</li>
+                <li>${meal.strIngredient2 + "   " + meal.strMeasure2}</li>
+                <li>${meal.strIngredient3 + "   " + meal.strMeasure3}</li>
+                <li>${meal.strIngredient4 + "   " + meal.strMeasure4}</li>
+                <li>${meal.strIngredient5 + "   " + meal.strMeasure5}</li>
+                <li>${meal.strIngredient6 + "   " + meal.strMeasure6}</li>
+                <li>${meal.strIngredient7 + "   " + meal.strMeasure7}</li>
+                <li>${meal.strIngredient8 + "   " + meal.strMeasure8}</li>
+                <li>${meal.strIngredient9 + "   " + meal.strMeasure9}</li>
+                <li>${meal.strIngredient10 + "   " + meal.strMeasure10}</li>
+                <li>${meal.strIngredient11 + "   " + meal.strMeasure11}</li>
+                <li>${meal.strIngredient12 + "   " + meal.strMeasure12}</li>
+                <li>${meal.strIngredient13 + "   " + meal.strMeasure13}</li>
+                <li>${meal.strIngredient14 + "   " + meal.strMeasure14}</li>
+                <li>${meal.strIngredient15 + "   " + meal.strMeasure15}</li>
+                <li>${meal.strIngredient16 + "   " + meal.strMeasure16}</li>
+                <li>${meal.strIngredient17 + "   " + meal.strMeasure17}</li>
+                <li>${meal.strIngredient18 + "   " + meal.strMeasure18}</li>
+                <li>${meal.strIngredient19 + "   " + meal.strMeasure19}</li>
+                <li>${meal.strIngredient20 + "   " + meal.strMeasure20}</li>
             </ul>
         </div>
 
@@ -99,5 +136,6 @@ function mealRecipeModal(meal){
         `;
 
     mealDetails.innerHTML = html;
-    mealDetails.parentElement.classList.add('showRecipe');
+    mealDetails.parentElement.classList.add("showRecipe");
 }
+})
