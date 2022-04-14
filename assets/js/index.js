@@ -69,6 +69,7 @@ function getMealList(searchInputTxt){
                             <a href="#" class="recipe-button">${meal.strMeal}</a>
                         </div>
                     </div>
+                    <br>
                 `;
             });
             mealResults.classList.remove("noMeal");
