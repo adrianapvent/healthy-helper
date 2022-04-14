@@ -1,39 +1,37 @@
-# Healthy Helper
+# **Healthy Helper**
 
 ## Purpose
-The purpose of this project is to allow users who are traveling to have access to healthy and nutritional facts from restaurants within their area. 
-
-You may also visit the interactive _______ to try out the scheduler yourself.
+The purpose of this project is to help inspire users to find meal recipes based on the ingredients available in their kitchen and review respective recipe's nutritional infromation.
 
 ## Objectives
 ```md
 GIVEN I am hungry
 WHEN I input my ingredient
-THEN I will find recipes that contain the ingredient and be able to search for the nutritional info
+THEN I will find recipes that contain the ingredient and able to search for the nutritional info
 ```
 
 ### **Acceptance Criteria**
 
 GIVEN I enter an ingredient
 - [ ] WHEN I open the recipe information
-THEN I am presented with a list of recipes that contain the ingredient searches for
+<br>THEN I am presented with a list of recipes that contain the ingredient searches for
 
 - [ ] WHEN I click on a recipe
-THEN I am presented with a MODAL that includes total required ingredients and cooking instructions
+<br>THEN I am presented with a MODAL that includes total required ingredients and cooking instructions
 
 - [ ] WHEN I click on the food
-THEN I can see the nutritional information
+<br>THEN I can see the nutritional information
 
 - [ ] WHEN I click the search button
-THEN the text for that ingredient is saved in local storage
+<br>THEN the text for that ingredient is saved in local storage
 
 - [ ] WHEN I refresh the page
-THEN the saved events persist
+<br>THEN the saved events persist
+
 
 ### **Additional Criteria**
 
 **Technical: 25%**
-Satisfies the following code requirements:
 - [ ] Application uses at least two server-side APIs.
 - [ ] Application uses client-side storage to store persistent data.
 - [ ] Application doesn't use JS alerts, prompts, or confirms (uses modals instead).
@@ -78,28 +76,28 @@ https://sam-pettyjohn.github.io/healthy-helper/
 
 ## Table of Contents
 
-- [Food Finder](#foodfinder)
-  - [Welcome](#welcome)
-  - [Description](#description)
+- [Healthy Helper](#healthy-helper)
+  - [Purpose](#purpose)
   - [Objectives](#objectives)
     - [**Acceptance Criteria**](#acceptance-criteria)
     - [**Additional Criteria**](#additional-criteria)
-    - [**MOCK UP**](#mock-up)
+    - [**Mock-Up**](#mock-up)
   - [Table of Contents](#table-of-contents)
-  - [Languages](#languages)
+  - [Languages](#built-with)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
 
-## Languages
-
-A list of languages used for this project:
+## Built With
 
 - HTML
 - CSS
+    - CSS Frameworks [Bulma](https://bulma.io/documentation/) & [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 - JavaScript
-- Moment.js (library)
+    - [jQuery](https://api.jquery.com/)
+
+*With an emphasis utilizing server-side APIs. For this project, we are utilizing [TheMealDB](https://www.themealdb.com/api.php) and [NutritionIX](https://docs.google.com/document/d/1_q-K-ObMTZvO0qUEAxROrN3bwMujwAN25sLHwJzliK0/edit#heading=h.jpcgv4yap78u).*
 
 ## Credits
 
