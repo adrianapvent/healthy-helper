@@ -7,8 +7,8 @@
 
 :root {
     --primary-color: var(rgb(186, 176, 176));
-    --secondary-color:var(rgb(37, 34, 34));
-    --tertiary-color:var(rgb(255, 255, 255));
+    --secondary-color: var(rgb(37, 34, 34));
+    --tertiary-color: var(rgb(255, 255, 255));
 
 }
 
