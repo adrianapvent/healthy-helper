@@ -69,7 +69,7 @@ GIVEN I enter an ingredient
 
 ### Mock-Up
 
-![image](./assets/images/mock-up.png)
+![image](./assets/images/demo_healthy_helper.gif)
 
 ### Website
 https://sam-pettyjohn.github.io/healthy-helper/

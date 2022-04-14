@@ -6,20 +6,28 @@
 }
 
 :root {
-    --primary-color: var(rgb(186, 176, 176));
-    --secondary-color: var(rgb(37, 34, 34));
-    --tertiary-color: var(rgb(255, 255, 255));
+    --primary-color: #F5FAe2;
+    --secondary-color: #B1C868;
+    --tertiary-color: #668406;
 
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-
-    background: var(--secondary-color);
+    background-color: var(--primary-color);
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
+}
+
+.hero {
+    background-color: var(--secondary-color);
+
+}
+
+.columns {
+    background-color: var(--primary-color);
 }
 
 #search-input {
@@ -46,7 +54,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    background: rgb(105, 93, 93);
+    background: var(--tertiary-color);
     border-radius: 15px;
     width: 60%;
     height: 90%;
@@ -98,7 +106,7 @@ body {
     margin-right: auto;
     padding: 10px;
     white-space: wrap;
-    border: 3px solid #B1C868;
+    border: 3px solid var(--secondary-color);
 }
 
 .ingredient-button {
@@ -107,3 +115,4 @@ body {
     margin: 10px;
     padding: 10px;
   }
+
