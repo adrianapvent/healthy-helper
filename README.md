@@ -13,59 +13,59 @@ THEN I will find recipes that contain the ingredient and able to search for the 
 ### **Acceptance Criteria**
 
 GIVEN I enter an ingredient
-- [ ] WHEN I open the recipe information
+- [x] WHEN I open the recipe information
 <br>THEN I am presented with a list of recipes that contain the ingredient searches for
 
-- [ ] WHEN I click on a recipe
+- [x] WHEN I click on a recipe
 <br>THEN I am presented with a MODAL that includes total required ingredients and cooking instructions
 
-- [ ] WHEN I click on the food
+- [x] WHEN I click on the food
 <br>THEN I can see the nutritional information
 
-- [ ] WHEN I click the search button
+- [x] WHEN I click the search button
 <br>THEN the text for that ingredient is saved in local storage
 
-- [ ] WHEN I refresh the page
+- [x] WHEN I refresh the page
 <br>THEN the saved events persist
 
 
 ### **Additional Criteria**
 
 **Technical: 25%**
-- [ ] Application uses at least two server-side APIs.
-- [ ] Application uses client-side storage to store persistent data.
-- [ ] Application doesn't use JS alerts, prompts, or confirms (uses modals instead).
-- [ ] Application uses a CSS framework other than Bootstrap.
-- [ ] Application is interactive (accepts and responds to user input).
+- [x] Application uses at least two server-side APIs.
+- [x] Application uses client-side storage to store persistent data.
+- [x] Application doesn't use JS alerts, prompts, or confirms (uses modals instead).
+- [x] Application uses a CSS framework other than Bootstrap.
+- [x] Application is interactive (accepts and responds to user input).
 
 **Concept: 10%**
-- [ ] Application should be a unique and novel idea.
-- [ ] Your group should clearly and concisely articulate your project idea.
+- [x] Application should be a unique and novel idea.
+- [x] Your group should clearly and concisely articulate your project idea.
 
 **Deployment: 20%**
-- [ ] Application deployed at live URL and loads with no errors.
-- [ ] Application GitHub URL submitted.
-- [ ] Portfolio at live URL submitted, featuring project.
+- [x] Application deployed at live URL and loads with no errors.
+- [x] Application GitHub URL submitted.
+- [x] Portfolio at live URL submitted, featuring project.
 
 **Repository Quality: 10%**
-- [ ] Repository has a unique name
-- [ ] Repository follows best practices for file structure and naming conventions
-- [ ] Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-- [ ] Repository contains multiple descriptive commit messages
-- [ ] Repository contains quality README.md with description, screenshots, link to deployed application
+- [x] Repository has a unique name
+- [x] Repository follows best practices for file structure and naming conventions
+- [x] Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+- [x] Repository contains multiple descriptive commit messages
+- [x] Repository contains quality README.md with description, screenshots, link to deployed application
 
 **Application Quality: 15%**
-- [ ] Application user experience is intuitive and easy to navigate.
-- [ ] Application user interface style is clean and polished.
-- [ ] Application is responsive.
+- [x] Application user experience is intuitive and easy to navigate.
+- [x] Application user interface style is clean and polished.
+- [x] Application is responsive.
 
 **Presentation: 10%**
-- [ ] Your group should present using Powerpoint or a similar presentation software.
-- [ ] Every group member should speak during the presentation.
-- [ ] Your presentation should follow the Project Presentation Template.
+- [x] Your group should present using Powerpoint or a similar presentation software.
+- [x] Every group member should speak during the presentation.
+- [x] Your presentation should follow the Project Presentation Template.
 
 **Collaboration: 10%**
-- [ ] There are no major disparities in the number of GitHub contributions between group members.
+- [x] There are no major disparities in the number of GitHub contributions between group members.
 
 ### Mock-Up
 
