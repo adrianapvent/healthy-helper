@@ -1,7 +1,7 @@
 # **Healthy Helper**
 
 ## Purpose
-The purpose of this project is to help inspire users to find meal recipes based on the ingredients available in their kitchen and review respective recipe's nutritional infromation.
+The purpose of this project is to help inspire users to find meal recipes based on the ingredients available in their kitchen and review respective recipe's nutritional information.
 
 ## Objectives
 ```md
@@ -99,15 +99,12 @@ https://sam-pettyjohn.github.io/healthy-helper/
 
 *With an emphasis utilizing server-side APIs. For this project, we are utilizing [TheMealDB](https://www.themealdb.com/api.php) and [NutritionIX](https://docs.google.com/document/d/1_q-K-ObMTZvO0qUEAxROrN3bwMujwAN25sLHwJzliK0/edit#heading=h.jpcgv4yap78u).*
 
-## Credits
-
-You may visit my [GitHub] profile to view my previous and most recent projects.
 
 ## Collaborators
 
-- James Huang
-- Adriana Pena
-- Sam Pettyjohn
+- James Huang: [Visit their GitHub Repo here](https://github.com/mrxanthic)
+- Adriana Pena: [Visit their GitHub Repo here](https://github.com/adrianapvent)
+- Sam Pettyjohn: [Visit their GitHub Repo here](https://github.com/sam-pettyjohn)
 
 ## License
 MIT License
